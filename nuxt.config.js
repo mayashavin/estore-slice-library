@@ -24,6 +24,9 @@ export default {
       rel: "icon",
       type: "image/x-icon",
       href: "/favicon.ico"
+    }, {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap"
     }]
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -33,7 +36,9 @@ export default {
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: [],
+  buildModules: [
+    '@nuxtjs/tailwindcss'
+  ],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [["@nuxtjs/prismic", {
     endpoint: smConfig.apiEndpoint || "",
@@ -43,9 +48,22 @@ export default {
         path: "/:uid"
       }]
     }
-  }], ["nuxt-sm"]],
+  }], ["nuxt-sm"], ['@nuxtjs/svg-sprite']],
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    transpile: ["vue-slicezone", "nuxt-sm"]
+    transpile: ["vue-slicezone", "nuxt-sm", /^@storefront-ui/]
+  },
+  storybook: {
+    stories: ["~/slices/**/*.stories.js"]
+  },
+  ignore: ["**/*.stories.js"],
+  tailwindcss: {
+    config: {
+      purge: {
+        content: [
+          "slices/**/**.vue"
+        ]
+      }
+    }
   }
 };
