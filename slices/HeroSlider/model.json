@@ -1,0 +1,44 @@
+{
+  "id": "hero_slider",
+  "type": "SharedSlice",
+  "name": "HeroSlider",
+  "description": "HeroSlider",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "HeroBanner",
+      "primary": {},
+      "items": {
+        "cover": {
+          "config": {
+            "label": "Cover Image",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
+        "title": {
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1,heading2,rtl"
+          },
+          "type": "StructuredText"
+        },
+        "description": {
+          "config": {
+            "label": "Description",
+            "placeholder": "Banner description",
+            "allowTargetBlank": true,
+            "single": "paragraph,rtl"
+          },
+          "type": "StructuredText"
+        }
+      }
+    }
+  ]
+}
