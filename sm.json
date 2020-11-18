@@ -1,3 +1,7 @@
 {
-  "libraries": ["@/slices"]
+  "libraries": [
+    "@/slices"
+  ],
+  "apiEndpoint": "https://estore-library.cdn.prismic.io/api/v2",
+  "storybook": "http://localhost:3003"
 }
