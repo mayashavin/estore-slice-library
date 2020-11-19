@@ -1,5 +1,5 @@
 <template>
-  <sf-hero class="section bg-gray-200 font-rail" :sliderOptions="{autoplay: false}">
+  <sf-hero class="section font-rail" :sliderOptions="{autoplay: false}">
     <template #prev="{go}">
       <button
         class="bg-white text-orange-500 sf-hero__controls__arrow left"
@@ -11,7 +11,7 @@
     <sf-hero-item
       v-for="(item, index) in slice.items"
       :key="index"
-      class="rounded-xl border shadow-md relative flex items-center py-4 px-6 h-banner bg-gray-600"
+      class="rounded-xl shadow-md relative flex items-center py-4 px-6 h-banner bg-gray-600"
       :title="$prismic.asText(item.title)"
       :subtitle="$prismic.asText(item.description)"
       button-text="Learn More"

@@ -4,7 +4,47 @@ import { RGBAToHexA, CROPMODE, GRAVITY, PLACEHOLDER_TRANSFORMATIONS } from "./he
 
 export default {
   title: 'Components/CImage',
-  decorators: [withKnobs]
+  decorators: [withKnobs],
+  parameters: {
+    escapeHTML: false,
+  },
+  argTypes: {
+    src: { 
+      control: 'text',
+      name: 'src',
+      description: 'Public Id or Image URL',
+      
+      type: {
+        required: true,
+      },
+      table: {
+        category: 'Image'
+      }
+    },
+    cloud: {
+      control: 'object',
+      name: 'cloud',
+      description: 'Cloudinary configuration options',
+      table: {
+        category: 'Configuration'
+      }
+    },
+    placeholder: {
+      control: {
+        type: 'select',
+        options: Object.keys(PLACEHOLDER_TRANSFORMATIONS),
+      },
+      description: 'Placeholder type for image',
+      name: 'placeholder',
+      table: {
+        category: 'Image',
+        defaultValue: {
+          summary: 'blur'
+        }
+      }
+    },
+    
+  }
 }
 
 export const Basic = () => ({
@@ -74,11 +114,3 @@ export const Basic = () => ({
   },
   template: '<c-image :src="src" :cloud="cloud" :transformations="transformations" />',
 })
-
-__Basic.story = {
-  parameters: {
-    knobs: {
-      escapeHTML: false
-    }
-  }
-};

@@ -3,29 +3,49 @@
   "type": "SharedSlice",
   "name": "UserAvatar",
   "description": "UserAvatar",
-  "variations": [{
-    "id": "default-slice",
-    "name": "Default slice",
-    "docURL": "...",
-    "version": "sktwi1xtmkfgx8626",
-    "description": "UserAvatar",
-    "primary": {
-      "title": {
-        "type": "StructuredText",
-        "config": {
-          "single": "heading1",
-          "label": "Title",
-          "placeholder": "This is where it all begins..."
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "UserAvatar",
+      "primary": {
+        "fname": {
+          "config": {
+            "label": "First Name",
+            "placeholder": "First Name of a user",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          },
+          "type": "StructuredText"
+        },
+        "lname": {
+          "config": {
+            "label": "Last Name",
+            "placeholder": "Last name",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          },
+          "type": "StructuredText"
+        },
+        "email": {
+          "config": {
+            "label": "Email",
+            "placeholder": "User email"
+          },
+          "type": "Text"
+        },
+        "avatar": {
+          "config": {
+            "label": "Avatar",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
         }
       },
-      "description": {
-        "type": "StructuredText",
-        "config": {
-          "single": "paragraph",
-          "label": "Description",
-          "placeholder": "A nice description of your product"
-        }
-      }
+      "items": {}
     }
-  }]
+  ]
 }

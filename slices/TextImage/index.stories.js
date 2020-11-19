@@ -23,3 +23,7 @@ export const DefaultSlice = () => ({
   },
   template: '<slice-zone :slices="[ mock ]" :resolver="resolver" />',
 });
+
+DefaultSlice.parameters = {
+  background
+}
