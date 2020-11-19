@@ -61,10 +61,6 @@ export default {
     gzip: true,
     exclude: []
   },
-  storybook: {
-    addons: ["@storybook/addon-knobs/register"],
-    stories: [ "~/components/**/*.stories.js", "~/slices/**/*.stories.js"],    
-  },
   ignore: ["**/*.stories.js"],
   tailwindcss: {
     config: {

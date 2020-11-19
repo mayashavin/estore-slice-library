@@ -33,9 +33,9 @@ const theme = create({
   // inputTextColor: 'black',
   // inputBorderRadius: 4,
 
-  brandTitle: 'My custom storybook',
-  brandUrl: 'https://example.com',
-  brandImage: 'https://placehold.it/350x150',
+  brandTitle: 'PrismStore Components',
+  // brandUrl: 'https://prismic',
+  brandImage: 'https://res.cloudinary.com/mayashavin/image/upload/v1601967336/coding_angels/white_logo_transparent_background.png',
 });
 
 addons.setConfig({
