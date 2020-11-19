@@ -4,7 +4,7 @@ import mocks from './mocks.json';
 import SliceZone from 'vue-slicezone';
 
 export default {
-  title: model.name,
+  title: `Product/${model.name}`,
 };
 
 // TODO: Update to loop over mocks.json
@@ -23,5 +23,3 @@ export const DefaultSlice = () => ({
   },
   template: '<slice-zone :slices="[ mock ]" :resolver="resolver" />',
 });
-
-DefaultSlice.storyName = mocks[0].name;
