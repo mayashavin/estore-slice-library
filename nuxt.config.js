@@ -4,21 +4,12 @@ if (!smConfig.apiEndpoint) {
   console.warn("Looks like Slice Machine hasn't been bootstraped already.\nCheck the `Getting Started` section of the README file :)");
 }
 
-import { create } from '@storybook/theming/create';
-
-const theme = create({
-  base: 'light',
-  brandTitle: 'EStoreUI',
-  brandUrl: 'https://example.com',
-  brandImage: 'https://placehold.it/350x150',
-});
-
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: "static",
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: "slice-library-starter-nuxt",
+    title: "Prismstore Components",
     meta: [{
       charset: "utf-8"
     }, {
@@ -27,12 +18,12 @@ export default {
     }, {
       hid: "description",
       name: "description",
-      content: ""
+      content: "Prismstore slice library"
     }],
     link: [{
       rel: "icon",
-      type: "image/x-icon",
-      href: "/favicon.ico"
+      type: "image/png",
+      href: "/logo.png"
     }, {
       rel: "stylesheet",
       href: "https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap"
@@ -48,6 +39,7 @@ export default {
   components: true,
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    "@nuxtjs/sitemap",    
     '@nuxtjs/tailwindcss'
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -64,21 +56,14 @@ export default {
   build: {
     transpile: ["vue-slicezone", "nuxt-sm", /^@storefront-ui/]
   },
+  sitemap: {
+    hostname: process.env.APP_URL,
+    gzip: true,
+    exclude: []
+  },
   storybook: {
     addons: ["@storybook/addon-knobs/register"],
-    stories: [ "~/components/**/*.stories.js", "~/slices/**/*.stories.js"],
-    parameters: {
-      docs: {
-        theme,
-        backgrounds: {
-          default: 'white',
-          values: [
-            { name: 'white', value: '#ffffff' },
-            { name: 'gray', value: '#aaaaaa' },
-          ],
-        },
-      }
-    }
+    stories: [ "~/components/**/*.stories.js", "~/slices/**/*.stories.js"],    
   },
   ignore: ["**/*.stories.js"],
   tailwindcss: {

@@ -95,3 +95,5 @@ export const RGBAToHexA = (rgba, prefix="rgb:") => {
 
   return `${prefix}${colors.r}${colors.g}${colors.b}${colors.a}`
 }
+
+export default RGBAToHexA

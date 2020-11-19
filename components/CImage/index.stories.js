@@ -1,6 +1,6 @@
 import { withKnobs, text, color, select, number } from "@storybook/addon-knobs";
 import CImage from './'
-import { RGBAToHexA, CROPMODE, GRAVITY } from "./helpers";
+import { RGBAToHexA, CROPMODE, GRAVITY, PLACEHOLDER_TRANSFORMATIONS } from "./helpers";
 
 export default {
   title: 'Components/CImage',
@@ -68,7 +68,8 @@ export const Basic = () => ({
           max: 100,
           step: 10
         }, 'Other transformations')
-      })
+      }),
+      placeholder: select('Placeholder', Object.keys(PLACEHOLDER_TRANSFORMATIONS), 'blur', 'Placeholder')
     }
   },
   template: '<c-image :src="src" :cloud="cloud" :transformations="transformations" />',
