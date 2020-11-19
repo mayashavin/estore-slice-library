@@ -1,0 +1,57 @@
+{
+  "id": "product_gallery",
+  "type": "SharedSlice",
+  "name": "ProductGallery",
+  "description": "ProductGallery",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "ProductGallery",
+      "primary": {
+        "mainImage": {
+          "config": {
+            "label": "Main Image",
+            "constraint": {},
+            "thumbnails": [
+              {
+                "name": "thumbnail",
+                "width": 120,
+                "height": 120
+              },
+              {
+                "name": "default",
+                "width": 450,
+                "height": 480
+              }
+            ]
+          },
+          "type": "Image"
+        }
+      },
+      "items": {
+        "image": {
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": [
+              {
+                "name": "thumbnail",
+                "width": 120,
+                "height": 120
+              },
+              {
+                "name": "default",
+                "width": 450,
+                "height": 480
+              }
+            ]
+          },
+          "type": "Image"
+        }
+      }
+    }
+  ]
+}

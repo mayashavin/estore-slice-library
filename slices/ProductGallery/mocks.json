@@ -1,0 +1,112 @@
+[
+  {
+    "id": "default-slice",
+    "name": "Default slice",
+    "docURL": "...",
+    "version": "sktwi1xtmkfgx8626",
+    "description": "ProductGallery",
+    "primary": {
+      "mainImage": {
+        "dimensions": { "width": 900, "height": 500 },
+        "alt": "Placeholder image",
+        "copyright": null,
+        "url": "https://images.prismic.io/important-sm-images/5782503d-59e4-4a8a-bc4f-0388ee5b7a3d_Nhm0Uj5U7wc.jpg?w=900&h=500",
+        "thumbnail": {
+          "dimensions": { "width": 120, "height": 120 },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.prismic.io/important-sm-images/dec29fb6-148b-4715-9f71-30b5cea3fcec_pXEskkt0tpg.jpg?w=120&h=120"
+        },
+        "default": {
+          "dimensions": { "width": 450, "height": 480 },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.prismic.io/important-sm-images/1e9d5359-fe8c-40b0-9a18-08dffb2311e9_5KxHdybrEyQ.jpg?w=450&h=480"
+        }
+      }
+    },
+    "items": [
+      {
+        "image": {
+          "dimensions": { "width": 900, "height": 500 },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.prismic.io/important-sm-images/15fd0037-cfff-4efa-a7a0-cbb9fafd5753_-VKgcOWML4k.jpg?w=900&h=500",
+          "thumbnail": {
+            "dimensions": { "width": 120, "height": 120 },
+            "alt": "Placeholder image",
+            "copyright": null,
+            "url": "https://images.prismic.io/important-sm-images/26830a3b-29e9-4cd2-84ca-c7313bd92d00_3Ip5Hox_Cro.jpg?w=120&h=120"
+          },
+          "default": {
+            "dimensions": { "width": 450, "height": 480 },
+            "alt": "Placeholder image",
+            "copyright": null,
+            "url": "https://images.prismic.io/important-sm-images/4b7f2693-f585-4740-9980-3656c4c72dec_JXow53j6AtE.jpg?w=450&h=480"
+          }
+        }
+      },
+      {
+        "image": {
+          "dimensions": { "width": 900, "height": 500 },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.prismic.io/important-sm-images/02c0841a-df5d-4967-8480-d3a758596191_-PyYwZf0SP0.jpg?w=900&h=500",
+          "thumbnail": {
+            "dimensions": { "width": 120, "height": 120 },
+            "alt": "Placeholder image",
+            "copyright": null,
+            "url": "https://images.prismic.io/important-sm-images/58805194-78f8-4f89-abca-4b3a270ad365_jef0ubjI_Hs.jpg?w=120&h=120"
+          },
+          "default": {
+            "dimensions": { "width": 450, "height": 480 },
+            "alt": "Placeholder image",
+            "copyright": null,
+            "url": "https://images.prismic.io/important-sm-images/05b6c285-b5a7-4034-aa4c-79d41670c3a8_rfS6oq6MWlU.jpg?w=450&h=480"
+          }
+        }
+      },
+      {
+        "image": {
+          "dimensions": { "width": 900, "height": 500 },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.prismic.io/important-sm-images/e9af888c-3575-4a25-93c3-e70b7e6618fe_HN0tPzaZJNA.jpg?w=900&h=500",
+          "thumbnail": {
+            "dimensions": { "width": 120, "height": 120 },
+            "alt": "Placeholder image",
+            "copyright": null,
+            "url": "https://images.prismic.io/important-sm-images/0c1acf72-dbfa-442a-8a64-ab8c84d41263_jZ4rJ0yLyrs.jpg?w=120&h=120"
+          },
+          "default": {
+            "dimensions": { "width": 450, "height": 480 },
+            "alt": "Placeholder image",
+            "copyright": null,
+            "url": "https://images.prismic.io/important-sm-images/ff13084f-fe0a-40bd-aa68-0e26ba6ffe7e_7elOvDgVoxg.jpg?w=450&h=480"
+          }
+        }
+      },
+      {
+        "image": {
+          "dimensions": { "width": 900, "height": 500 },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.prismic.io/important-sm-images/ef51bfb6-48fc-4d99-9ca9-a73ab1ff6b25__vQuvwCEtNM.jpg?w=900&h=500",
+          "thumbnail": {
+            "dimensions": { "width": 120, "height": 120 },
+            "alt": "Placeholder image",
+            "copyright": null,
+            "url": "https://images.prismic.io/important-sm-images/5782503d-59e4-4a8a-bc4f-0388ee5b7a3d_Nhm0Uj5U7wc.jpg?w=120&h=120"
+          },
+          "default": {
+            "dimensions": { "width": 450, "height": 480 },
+            "alt": "Placeholder image",
+            "copyright": null,
+            "url": "https://images.prismic.io/important-sm-images/679c89df-30db-490c-a287-f66348ac8d71_BocBGm1zoOw.jpg?w=450&h=480"
+          }
+        }
+      }
+    ],
+    "slice_type": "product_gallery"
+  }
+]
