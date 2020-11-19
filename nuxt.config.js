@@ -4,6 +4,15 @@ if (!smConfig.apiEndpoint) {
   console.warn("Looks like Slice Machine hasn't been bootstraped already.\nCheck the `Getting Started` section of the README file :)");
 }
 
+import { create } from '@storybook/theming/create';
+
+const theme = create({
+  base: 'light',
+  brandTitle: 'EStoreUI',
+  brandUrl: 'https://example.com',
+  brandImage: 'https://placehold.it/350x150',
+});
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: "static",
@@ -32,7 +41,9 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [
+    "plugins/cloudinary"
+  ],
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
@@ -54,7 +65,20 @@ export default {
     transpile: ["vue-slicezone", "nuxt-sm", /^@storefront-ui/]
   },
   storybook: {
-    stories: ["~/slices/**/*.stories.js"]
+    addons: ["@storybook/addon-knobs/register"],
+    stories: ["~/slices/**/*.stories.js"],
+    parameters: {
+      docs: {
+        theme,
+        backgrounds: {
+          default: 'white',
+          values: [
+            { name: 'white', value: '#ffffff' },
+            { name: 'gray', value: '#aaaaaa' },
+          ],
+        },
+      }
+    }
   },
   ignore: ["**/*.stories.js"],
   tailwindcss: {
@@ -65,5 +89,9 @@ export default {
         ]
       }
     }
+  },
+  env: {
+    cloudName: process.env.CLOUD_NAME,
+    storageType: process.env.STORAGE_TYPE
   }
 };
