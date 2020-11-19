@@ -66,7 +66,7 @@ export default {
   },
   storybook: {
     addons: ["@storybook/addon-knobs/register"],
-    stories: ["~/slices/**/*.stories.js"],
+    stories: [ "~/components/**/*.stories.js", "~/slices/**/*.stories.js"],
     parameters: {
       docs: {
         theme,

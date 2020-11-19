@@ -12,7 +12,8 @@
 <script>
 import { buildImageUrl } from 'cloudinary-build-url'
 import { HORIZONTAL_POSITION } from '../ProductGallery/helpers'
-import { PLACEHOLDER_TRANSFORMATIONS } from '../../components/CImage.vue'
+import { PLACEHOLDER_TRANSFORMATIONS } from '../../components/CImage/helpers'
+
 export default {
   props: {
     slice: {

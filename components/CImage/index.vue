@@ -1,59 +1,6 @@
 <script>
 import { buildImageUrl } from 'cloudinary-build-url'
-export const PLACEHOLDER_TRANSFORMATIONS = {
-  vectorize: {
-    effect: 'vectorize:3:0.1', format: 'svg'
-  },
-  pixelate: {
-    effect: 'pixelate', quality: 1
-  },
-  blur: {
-    effect: 'blur:2000', quality: 1
-  },
-  predominant: [
-    {variables: [['$currWidth', 'w'], ['$currHeight', 'h']]},
-    {
-      resize: {
-        width: 'iw_div_2', 
-        aspectRatio: 1, 
-        type: 'pad'
-      }, 
-      background: 'auto'
-    },
-    {
-      resize: {
-        type: 'crop', 
-        width: 10, 
-        height: 10
-      }, 
-      gravity: 'north_east'
-    },
-    {
-      resize: {
-        width: '$currWidth', 
-        height: '$currHeight',
-        type: 'fill'
-      }, 
-    }
-  ],
-  color: [
-    {
-      variables: [["$nh", "ih"], ["$nw", "iw"]],
-      resize: {
-        type: "scale",
-        width: 1,
-      },
-      quality: "1"
-    },
-    { 
-      resize: {
-        type: "scale",
-        width: "$nw",
-        height: "$nh"
-      },
-    }
-  ],
-}
+import { PLACEHOLDER_TRANSFORMATIONS } from './helpers'
 
 export default {
   props: {
