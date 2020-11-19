@@ -2,7 +2,7 @@
   "name": "slice-library-starter-nuxt",
   "version": "0.0.0",
   "description": "An awesome Estore Slice Library made with Nuxt.js",
-  "author": "Maya Shavin <dpnminh@gmail.com>",
+  "author": "Maya Shavin <dpnminh@gmail.com> (https://mayashavin.com)",
   "license": "MIT",
   "main": "slices/index.js",
   "scripts": {
@@ -15,7 +15,18 @@
     "prismic": "prismic",
     "slicemachine": "start-slicemachine --port 9999",
     "storybook": "nuxt storybook",
-    "build-storybook": "nuxt storybook build"
+    "build-storybook": "nuxt storybook build",
+    "lint": "eslint --ext .js,.vue ."
+  },
+  "engines": {
+    "node": ">=10.16.3",
+    "yarn": ">=1.13.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
+    }
   },
   "dependencies": {
     "@nuxtjs/prismic": "^1.2.4",
@@ -29,8 +40,18 @@
     "vue-slicezone": "^0.0.28"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@nuxtjs/eslint-module": "^3.0.1",
     "@nuxtjs/storybook": "2.2.2",
     "@nuxtjs/tailwindcss": "^3.2.0",
+    "@storybook/addon-knobs": "5.3.20",
+    "@storybook/theming": "5.3.20",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-vue": "^7.1.0",
+    "prettier": "^2.1.2",
     "prismic-cli": "3.8.3-beta.0",
     "shx": "^0.3.3",
     "slice-machine-ui": "^0.0.38",
