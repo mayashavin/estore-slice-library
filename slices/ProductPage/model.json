@@ -1,0 +1,104 @@
+{
+  "id": "product_page",
+  "type": "SharedSlice",
+  "name": "ProductPage",
+  "description": "ProductPage",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "ProductPage",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "single": "paragraph",
+            "label": "Description",
+            "placeholder": "A nice description of your product"
+          }
+        },
+        "score": {
+          "type": "Number",
+          "config": {
+            "label": "",
+            "id": "score",
+            "placeholder": ""
+          }
+        },
+        "price": {
+          "type": "Number",
+          "config": {
+            "label": "",
+            "id": "price",
+            "placeholder": ""
+          }
+        },
+        "currency": {
+          "type": "Text",
+          "config": {
+            "label": "",
+            "id": "currency",
+            "placeholder": ""
+          }
+        },
+        "cover": {
+          "type": "Image",
+          "config": {
+            "id": "cover",
+            "label": "",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "tag": {
+          "config": {
+            "label": "Tags",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "id": "image",
+            "label": "",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "sectionTitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "",
+            "id": "sectionTitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,rtl"
+          }
+        },
+        "sectionDescription": {
+          "type": "StructuredText",
+          "config": {
+            "label": "",
+            "id": "sectionDescription",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,rtl"
+          }
+        }
+      }
+    }
+  ]
+}
