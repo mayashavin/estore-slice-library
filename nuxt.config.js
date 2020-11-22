@@ -52,6 +52,18 @@ export default {
       }]
     }
   }], ["nuxt-sm"], ['@nuxtjs/svg-sprite']],
+
+  storybook: {
+    modules: {
+      exclude: [
+        '@nuxtjs/svg-sprite'
+      ]
+    },
+    stories: [
+      "~/components/**/*.stories.js",
+      "~/slices/**/*.stories.js"
+    ]
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: ["vue-slicezone", "nuxt-sm", /^@storefront-ui/]
