@@ -5,23 +5,14 @@ import SliceZone from 'vue-slicezone';
 
 export default {
   title: `User/${model.name}`,
-  decorators: [() => ({ template: '<div class="p-5"><story/></div>' })],
-  parameters: {
-    backgrounds: {
-      values: [
-        { name: 'red', value: '#f00' },
-        { name: 'green', value: '#0f0' },
-      ],
-    },
-  }
 };
 
-const Template = (args, { argTypes }) => ({
+// TODO: Update to loop over mocks.json
+export const DefaultSlice = () => ({
   components: {
     Slice,
-    SliceZone
+    SliceZone,
   },
-  props: Object.keys(argTypes),
   data() {
     return {
       mock: mocks[0],
@@ -31,20 +22,4 @@ const Template = (args, { argTypes }) => ({
     };
   },
   template: '<slice-zone :slices="[ mock ]" :resolver="resolver" />',
-})
-
-export const Basic = Template.bind()
-
-Basic.args = {
-  primary: true,
-  label: 'Basic'
-}
-
-Basic.parameters = {
-  backgrounds: {
-    values: [
-      { name: 'red', value: '#f00' },
-      { name: 'green', value: '#0f0' },
-    ],
-  },
-};
+});

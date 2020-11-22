@@ -3,29 +3,75 @@
   "type": "SharedSlice",
   "name": "ReviewItem",
   "description": "ReviewItem",
-  "variations": [{
-    "id": "default-slice",
-    "name": "Default slice",
-    "docURL": "...",
-    "version": "sktwi1xtmkfgx8626",
-    "description": "ReviewItem",
-    "primary": {
-      "title": {
-        "type": "StructuredText",
-        "config": {
-          "single": "heading1",
-          "label": "Title",
-          "placeholder": "This is where it all begins..."
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "ReviewItem",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "description": {
+          "config": {
+            "label": "Description",
+            "placeholder": "A nice description of your review",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          },
+          "type": "StructuredText"
+        },
+        "score": {
+          "type": "Number",
+          "config": {
+            "label": "",
+            "id": "score",
+            "placeholder": ""
+          }
+        },
+        "reviewerName": {
+          "type": "Text",
+          "config": {
+            "label": "",
+            "id": "reviewerName",
+            "placeholder": ""
+          }
+        },
+        "reviewerAvatar": {
+          "type": "Image",
+          "config": {
+            "id": "reviewerAvatar",
+            "label": "",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "date": {
+          "type": "Text",
+          "config": {
+            "label": "",
+            "id": "date",
+            "placeholder": ""
+          }
         }
       },
-      "description": {
-        "type": "StructuredText",
-        "config": {
-          "single": "paragraph",
-          "label": "Description",
-          "placeholder": "A nice description of your product"
+      "items": {
+        "screenshot": {
+          "config": {
+            "label": "",
+            "constraint": {},
+            "thumbnails": []
+          },
+          "type": "Image"
         }
       }
     }
-  }]
+  ]
 }
