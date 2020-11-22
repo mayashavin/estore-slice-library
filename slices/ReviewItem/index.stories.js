@@ -1,14 +1,40 @@
 import Slice from './';
 import model from './model';
-import mocks from './mocks.json';
+import mocks from './customMocks.json';
 import SliceZone from 'vue-slicezone';
 
 export default {
   title: `User/${model.name}`,
+  parameters: {
+    backgrounds: {
+      default: 'light'
+    }
+  },
+  argTypes: {
+    starColor: {
+      control: 'color',
+      description: 'Color of the review star icon.',
+      table: {
+        category: 'Review Icon'
+      }
+    },
+    max: {
+      control: {
+        type: 'number'
+      },
+      description: 'Max score given to review',
+      name: 'max',
+      table: {
+        category: 'Review',
+        defaultValue: {
+          summary: 5
+        }
+      }
+    }
+  }
 };
 
-// TODO: Update to loop over mocks.json
-export const DefaultSlice = () => ({
+export const Basic = () => ({
   components: {
     Slice,
     SliceZone,
@@ -18,8 +44,8 @@ export const DefaultSlice = () => ({
       mock: mocks[0],
       resolver() {
         return Slice;
-      }
+      },
     };
   },
-  template: '<slice-zone :slices="[ mock ]" :resolver="resolver" />',
+  template: '<slice-zone :slices="[ mock ]" :resolver="resolver"/>',
 });
