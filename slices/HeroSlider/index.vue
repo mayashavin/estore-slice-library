@@ -1,8 +1,8 @@
 <template>
-  <sf-hero class="section font-rail" :sliderOptions="{autoplay: false}">
+  <sf-hero class="section font-rail">
     <template #prev="{go}">
       <button
-        class="bg-white text-orange-500 sf-hero__controls__arrow left"
+        class="bg-white text-prismui-500 sf-hero__controls__arrow left"
         @click="go"
       >
         <svg-icon name="chevron-left" class="w-6 h-6 fill-current"/>
@@ -14,7 +14,7 @@
       class="rounded-xl shadow-md relative flex items-center py-4 px-6 h-banner bg-gray-600"
       :title="$prismic.asText(item.title)"
       :subtitle="$prismic.asText(item.description)"
-      button-text="Learn More"
+      :button-text="slice.primary.buttonLabel || 'Learn More'"
       :image="coverImage(item.cover.url)"
     >
       <template #title="{title}">
@@ -24,7 +24,7 @@
         <p :field="subtitle" class="text-md text-gray-200 my-2">{{subtitle}}</p>
       </template>
       <template #call-to-action="{buttonText}">
-        <button class="rounded-3xl border-white inline block shadow-md bg-white px-6 text-lg py-2 mt-4 text-orange-600 font-semibold flex items-center justify-center">
+        <button class="rounded-3xl border-white inline block shadow-md bg-white px-6 text-lg py-2 mt-4 text-prismui-600 font-semibold flex items-center justify-center">
           <span>{{buttonText}}</span>
           <svg-icon name="chevron-right" class="w-4 h-4 fill-current ml-2" />
         </button>
@@ -32,7 +32,7 @@
     </sf-hero-item>
     <template #next="{go}">
       <button
-        class="bg-white text-orange-500 sf-hero__controls__arrow right"
+        class="bg-white text-prismui-500 sf-hero__controls__arrow right"
         @click="go"
       >
         <svg-icon name="chevron-right" class="w-6 h-6 fill-current"/>

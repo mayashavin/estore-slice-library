@@ -1,1 +1,23 @@
-[{"id":"default-slice","name":"Default slice","docURL":"...","version":"sktwi1xtmkfgx8626","description":"SubscribeForm","primary":{"title":[{"type":"heading1","text":"generate scalable deliverables","spans":[]}],"placeholder":"A text of type \"Placeholder\" that conveys Enter your email at your own risk","subscribe":"Subscribe to me!","action":{"link_type":"Web","url":"https://slicemachine.dev"}},"items":[],"slice_type":"subscribe_form"}]
+[
+  {
+    "id": "default-slice",
+    "name": "Default slice",
+    "docURL": "...",
+    "version": "sktwi1xtmkfgx8626",
+    "description": "SubscribeForm",
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "generate scalable deliverables",
+          "spans": []
+        }
+      ],
+      "placeholder": "abc@hello.com",
+      "subscribe": "Subscribe to me!",
+      "action": { "link_type": "Web", "url": "https://slicemachine.dev" }
+    },
+    "items": [],
+    "slice_type": "subscribe_form"
+  }
+]

@@ -10,7 +10,16 @@
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
       "description": "HeroBanner",
-      "primary": {},
+      "primary": {
+        "buttonLabel": {
+          "type": "Text",
+          "config": {
+            "label": "",
+            "id": "buttonLabel",
+            "placeholder": ""
+          }
+        }
+      },
       "items": {
         "cover": {
           "config": {

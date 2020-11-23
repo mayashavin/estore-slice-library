@@ -22,24 +22,28 @@ export default {
       default() {
         return {}
       }
-    },
-    buttonText: {
-      type: String,
-      default: 'Shop Now'
     }
   },
+  data() {
+    return {
+      buttonText: this.slice.primary.buttonText || 'Shop Now'
+    }
+  }
 }
 </script>
 <style>
 .hero-banner__container .sf-banner__wrapper {
-  @apply bg-green-200 font-rail px-3 w-full;
-  --bg-opacity: 0.2;
+  @apply bg-prismui-400 font-rail px-3 w-full;
+  --bg-opacity: 0.5;
 }
 
 @screen md {
   .hero-banner__container .sf-banner__wrapper {
-    --bg-opacity: 0.3;
     padding: var(--banner-padding, var(--spacer-xl));
+  }
+
+  .hero-banner__container .sf-banner__wrapper .sf-banner__title {
+    @apply text-2xl;
   }
 }
 
@@ -47,10 +51,20 @@ export default {
   .hero-banner__container .sf-banner__wrapper {
     --bg-opacity: 0.8;
   }
+
+  .hero-banner__container .sf-banner__wrapper .sf-banner__title {
+    @apply text-3xl;
+  }
 }
 
 .hero-banner__container .sf-banner__wrapper .sf-banner__subtitle {
-  @apply text-gray-700
+  @apply text-gray-100;
+}
+
+.hero-banner__container .sf-banner__wrapper .sf-banner__title {
+  @apply w-full text-left;
+   word-break: break-all;
+   overflow: hidden;
 }
 </style>
 

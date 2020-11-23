@@ -10,7 +10,16 @@
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
       "description": "FeaturedItem",
-      "primary": {},
+      "primary": {
+        "callToAction": {
+          "type": "Text",
+          "config": {
+            "label": "",
+            "id": "callToAction",
+            "placeholder": ""
+          }
+        }
+      },
       "items": {
         "cover": {
           "type": "Image",
@@ -48,6 +57,14 @@
             "id": "link",
             "placeholder": "",
             "allowTargetBlank": true
+          }
+        },
+        "background": {
+          "type": "Text",
+          "config": {
+            "label": "",
+            "id": "background",
+            "placeholder": ""
           }
         }
       }

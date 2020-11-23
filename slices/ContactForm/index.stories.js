@@ -1,17 +1,27 @@
-import Slice from './';
-import model from './model';
-import mocks from './mocks.json';
-import SliceZone from 'vue-slicezone';
+import Slice from "./";
+import model from "./model";
+import mocks from "./mocks.json";
+import SliceZone from "vue-slicezone";
 
 export default {
   title: `Form/${model.name}`,
+  parameters: {
+    //Disable docsPage since $prismic got lost
+    docs: {
+      page: () =>
+        "Doc page for this component is currently not available due to a bug between $prismic and storybook"
+    },
+    controls: {
+      disabled: true
+    }
+  }
 };
 
 // TODO: Update to loop over mocks.json
 export const DefaultSlice = () => ({
   components: {
     Slice,
-    SliceZone,
+    SliceZone
   },
   data() {
     return {
@@ -21,5 +31,5 @@ export const DefaultSlice = () => ({
       }
     };
   },
-  template: '<slice-zone :slices="[ mock ]" :resolver="resolver" />',
+  template: '<slice-zone :slices="[ mock ]" :resolver="resolver" />'
 });

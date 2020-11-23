@@ -77,6 +77,10 @@ export default {
         primary: { 
           title: item.sectionTitle, 
           description: item.sectionDescription, 
+          headingStyles: {
+            color: 'prismui-700',
+            size: 'sm'
+          }
         }
       })),
     }

@@ -1,0 +1,80 @@
+{
+  "id": "landing_page",
+  "type": "SharedSlice",
+  "name": "LandingPage",
+  "description": "LandingPage",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "LandingPage",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "single": "paragraph",
+            "label": "Description",
+            "placeholder": "A nice description of your product"
+          }
+        },
+        "logo": {
+          "type": "Image",
+          "config": {
+            "id": "logo",
+            "label": "",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "twitter": {
+          "type": "Link",
+          "config": {
+            "label": "",
+            "id": "twitter",
+            "placeholder": "",
+            "allowTargetBlank": true
+          }
+        },
+        "facebook": {
+          "type": "Link",
+          "config": {
+            "label": "",
+            "id": "facebook",
+            "placeholder": "",
+            "allowTargetBlank": true
+          }
+        },
+        "github": {
+          "type": "Link",
+          "config": {
+            "label": "",
+            "id": "github",
+            "placeholder": "",
+            "allowTargetBlank": true
+          }
+        }
+      },
+      "items": {
+        "feature": {
+          "type": "Link",
+          "config": {
+            "label": "",
+            "id": "feature",
+            "placeholder": "",
+            "allowTargetBlank": true
+          }
+        }
+      }
+    }
+  ]
+}

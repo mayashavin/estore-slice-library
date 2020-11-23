@@ -1,7 +1,7 @@
 <template>
   <div>
     <div 
-      class="flex justify-between items-center p-2 border-b" 
+      class="flex justify-between items-center p-2 border-b cursor-pointer" 
       @click="toggleExpand"
       aria-label="click to expand"
       :class="headingClass"
@@ -22,8 +22,6 @@ export default {
       default() {
         return {
           primary: {
-            title: [],
-            description: [],
             headingStyles: {
               size: 'sm',
               color: 'prismui-500',
@@ -43,14 +41,14 @@ export default {
       title: this.slice.primary.title,
       description: this.slice.primary.description,
       expanded: false,
-      size: this.slice.primary.headingStyles.size
+      size: this.slice.primary.headingStyles.size || 'sm'
     }
   },
   methods: {
     toggleExpand() {
       this.expanded = !this.expanded
     },
-    getClass(obj) {
+    getClass(obj = {}) {
       const text = obj.color ? `text-${obj.color}` : ''
       const bg = obj.background ? `bg-${obj.background}` : ''
       const size = obj.size ? `text-${obj.size}` : ''
