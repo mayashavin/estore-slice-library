@@ -14,21 +14,20 @@
         <li
           v-for="tag in tags" 
           :key="tag" 
-          class="py-1 px-4 text-white mr-2 my-2 text-sm rounded-full bg-indigo-500 product-page--tag" 
+          class="mr-2 my-2 product-page--tag" 
         >
-          {{tag}}
+          <tag :tag="tag" />
         </li>
       </ul>
       <p class="text-green-700 uppercase font-bold mt-3 text-lg">{{price}}</p>
       <button class="rounded-lg bg-green-700 text-white py-2 px-5 font-semibold my-4 shadow-lg capitalize product-page--call-btn">{{callToAction}}</button>
       <div class="my-5">
-        <div v-for="(section, index) in sections" :key="index" class="my-4">
-          <div class="text-blue-800 flex justify-between items-center pb-2 border-b mb-3">
-            <prismic-rich-text :field="section.title" class="text-sm font-semibold capitalize " />
-            <svg-icon :name="getExpandIcon(section.expanded)" class="fill-current w-4 h-4 mb-2" @click="toggleExpand(section)"/>
-          </div>
-          <prismic-rich-text :field="section.description" class="text-sm mb-3 text-gray-700" v-show="section.expanded" />
-        </div>
+        <accordion-item
+          v-for="(section, index) in sections"
+          :key="index"
+          :slice="section"
+          class="my-4"
+        />
       </div>
     </div>
   </section>
@@ -37,9 +36,11 @@
 import { SfRating } from '@storefront-ui/vue'
 import ProductGallery from '../ProductGallery/'
 import { convert } from '../../helpers/currency.js'
+import Tag from '../../components/Tag'
+import AccordionItem from '../AccordionItem'
 
 export default {
-  components: { SfRating, ProductGallery },
+  components: { SfRating, ProductGallery, Tag, AccordionItem },
   props: {
     slice: {
       type: Object,
@@ -72,7 +73,12 @@ export default {
         items: this.slice.items
       },
       rates: {},
-      sections: this.slice.items.map(item => ({ title: item.sectionTitle, description: item.sectionDescription, expanded: false })),
+      sections: this.slice.items.map(item => ({ 
+        primary: { 
+          title: item.sectionTitle, 
+          description: item.sectionDescription, 
+        }
+      })),
     }
   },
   methods: {
@@ -100,7 +106,6 @@ export default {
     const rates = await convert(this.slice.primary.price, this.slice.primary.currency)
 
     this.rates = rates
-    console.log(rates)
   }
 }
 </script>
