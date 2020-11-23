@@ -52,31 +52,52 @@
           }
         },
         "cover": {
-          "type": "Image",
           "config": {
-            "id": "cover",
             "label": "",
             "constraint": {},
-            "thumbnails": []
+            "thumbnails": [
+              {
+                "name": "default",
+                "width": 450,
+                "height": 480
+              },
+              {
+                "name": "thumbnail",
+                "width": 120,
+                "height": 120
+              }
+            ]
+          },
+          "type": "Image"
+        },
+        "tags": {
+          "type": "Text",
+          "config": {
+            "label": "",
+            "id": "tags",
+            "placeholder": ""
           }
         }
       },
       "items": {
-        "tag": {
-          "config": {
-            "label": "Tags",
-            "placeholder": ""
-          },
-          "type": "Text"
-        },
         "image": {
-          "type": "Image",
           "config": {
-            "id": "image",
-            "label": "",
+            "label": "Image",
             "constraint": {},
-            "thumbnails": []
-          }
+            "thumbnails": [
+              {
+                "name": "default",
+                "width": 450,
+                "height": 480
+              },
+              {
+                "name": "thumbnail",
+                "width": 120,
+                "height": 120
+              }
+            ]
+          },
+          "type": "Image"
         },
         "sectionTitle": {
           "type": "StructuredText",

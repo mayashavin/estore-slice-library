@@ -1,6 +1,6 @@
 import Slice from './';
 import model from './model';
-import mocks from './mocks.json';
+import mocks from './customMocks.json';
 import SliceZone from 'vue-slicezone';
 
 export default {
