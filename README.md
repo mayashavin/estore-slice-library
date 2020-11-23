@@ -1,125 +1,10 @@
-# Slice Library Nuxt.js Starter
+# PrismUI Slice Library
 
-> Looking for the React counterpart? [Check out the Next.js starter](https://github.com/prismicio-community/slice-library-starter-next#readme).
+> This is the project done to enter the Slice Contest organized by [Prismic](https://prismic.io)
 
-A starter to create your slice library with [Nuxt.js](https://nuxtjs.org) and [Slice Machine](https://slicemachine.dev) for [#SliceContest](https://prismic.io/blog/slice-contest?utm_campaign=devexp&utm_source=github&utm_medium=slicecontestpost). This document is here to help you through the whole process of creating your library but is not comprehensive to what you can do, unleash your creativity!
+![Logo of PrismUI](https://res.cloudinary.com/mayashavin/image/upload/w_200,c_scale,f_auto,q_auto/v1606168965/prismUi/logo_transparent_background)
 
-- [📚 &nbsp;Useful Links](#user-content--useful-links)
-- [🏁 &nbsp;Getting Started](#user-content--getting-started)
-  - [Setting up Your Project](#setting-up-your-project)
-  - [Using the Prismic CLI](#using-the-prismic-cli)
-  - [Setting up Prismic and Slice Machine](#setting-up-prismic-and-slice-machine)
-- [👩‍💻 &nbsp;Developing](#user-content--developing)
-  - [Creating a Slice](#creating-a-slice)
-  - [Launching the Slice Builder](#launching-the-slice-builder)
-- [🚀 &nbsp;Deploying Your Storybook](#user-content--deploying-your-storybook)
-  - [Hosting on Netlify](#hosting-on-netlify)
-  - [Hosting on Vercel](#hosting-on-vercel)
-- [☑️ &nbsp;Submission Checklist](#user-content--submission-checklist)
-
-## 📚 &nbsp;Useful Links
-
-- [📣 &nbsp;Contest Announcement Blog Post](https://prismic.io/blog/slice-contest?utm_campaign=devexp&utm_source=github&utm_medium=slicecontestpost), check rules and additional information there!
-- [🌐 &nbsp;Contest Forum Section](https://community.prismic.io/c/slice-machine/slicecontest), get help and share feedback here~
-- [🔪 &nbsp;Slice Machine Documentation](https://www.slicemachine.dev/documentation), to learn more about Slice Machine
-- [📖 &nbsp;Prismic Vue.js Documentation](https://prismic.io/docs/vuejs/getting-started/with-the-vuejs-starter), to learn more about Prismic with Vue.js
-
-## 🏁 &nbsp;Getting Started
-
-Here's a step-by-step tutorial to get started using this starter.
-
-### Setting up Your Project
-
-Start by [forking this repository](https://github.com/prismicio-community/slice-library-starter-nuxt/fork), this will create a copy of this repository on your GitHub account.
-
-Once the repository is forked, you can clone it locally and install its dependencies:
-
-```bash
-$ git clone https://github.com/<your_username>/slice-library-starter-nuxt
-$ cd slice-library-starter-nuxt
-$ yarn install # if you use npm: `$ npm install`
-```
-
-While your package manager installs the dependencies, you can already update the [LICENSE](./LICENSE) file to replace `<copyright holders>` with your name. You can also update the [package.json](./package.json) file to fill the `author` field~
-
-### Using the Prismic CLI
-
-For convenience and to be sure you are running the correct version of Prismic CLI it has been installed as part of `devDependencies` and aliased to the `prismic` script in this project. Thanks to that you can run the CLI as a package script:
-
-```bash
-# Using Yarn
-$ yarn prismic <command> <options>
-# Using npm
-$ npm run prismic -- <command> <options>
-```
-
-If you still wish to use the CLI installed globally make sure you are running version `3.8.3-beta.0` or greater:
-
-```bash
-# Installing the CLI globally using Yarn (optional)
-$ yarn global add prismic-cli@3.8.3-beta.0
-# Installing the CLI globally using npm (optional)
-$ npm install --global prismic-cli@3.8.3-beta.0
-
-# You can then use the CLI globally...
-$ prismic <command> <options>
-```
-
-> In the following sections only the Yarn version from above (recommended) will be used in the examples for the sake of simplicity.
-
-### Setting up Prismic and Slice Machine
-
-If you do not own a Prismic account yet you can **create one** for free [here](https://prismic.io/dashboard/signup?redirectUri=/dashboard) or by using the CLI:
-
-```bash
-$ yarn prismic signup
-# The CLI will then guide you through the process...
-```
-
-Once you have a Prismic account, or if you already had one, **log in** within the CLI:
-
-```bash
-$ yarn prismic login
-# The CLI will then guide you through the process...
-```
-
-When logged in, you can then **bootstrap** your Slice Machine project, this will create you a Prismic repository for this project:
-
-```bash
-$ yarn prismic sm --bootstrap
-# The CLI will then prompt you for a Prismic repository name...
-```
-
-Finally, and since that's a requirement for this contest, you will want to bootstrap a Storybook project. Thankfully Slice Machine comes with a handy command for that:
-
-```bash
-$ yarn prismic sm --add-storybook
-```
-
-This should create a simple Storybook inside your project. Bear in mind though that this one is still quite basic, feel free to go fancy by adding [addons](https://storybook.js.org/addons) and more! (although you might want to [stick with version `5.x.x`](https://github.com/prismicio-community/slice-library-starter-nuxt/issues/2#issuecomment-721650137) of those addons because Slice Machine installs version `2.2.2` of `@nuxtjs/storybook` to prevent some issues) Here's an example of a more elaborated Storybook documentation of a slice library for inspiration: [sms-hoy-storybook.netlify.app](https://sms-hoy-storybook.netlify.app)
-
-> ⚠ Storybook is known for being quite picky with its dependencies. If you experience a blank page when running it with a lot of errors in the browser console try deleting your lock file and installing dependencies again, should fix the issue.
-
-Well done! You are now ready to start developing your slice library with Slice Machine.
-
-## 👩‍💻 &nbsp;Developing
-
-Some quick reminders to help you developing your library with Slice Machine and the Slice Builder. Please refer to the [documentation](https://www.slicemachine.dev/documentation) if you are looking for more in-depth knowledge.
-
-### Creating a Slice
-
-To create a slice run:
-
-```bash
-$ yarn prismic sm --create-slice
-# The CLI will then guide you through the process...
-```
-
-This will create a new directory inside `./slices` named after the provided slice name. Inside it `index.vue` is the slice component itself.
-
-Slices behave just like any regular Nuxt.js component but receives a `slice` prop containing its slice fields. They are run in a Nuxt context meaning that any configuration / module you add to your `nuxt.config.js` file will reflect as expected on those. For example, if you want to use Tailwind CSS, its [setup](https://tailwindcss.nuxtjs.org/setup) remains exactly the same with `@nuxtjs/tailwindcss`.
-
-For comprehensive documentation about creating your own slices check the dedicated [documentation](https://www.slicemachine.dev/documentation/create-your-own-slices-components).
+🎮 &nbsp; [Playground](https://prismstore-storybook.netlify.app/?path=/story/landingpage--default-slice)
 
 ### Launching the Slice Builder
 
@@ -175,14 +60,3 @@ On the last build options step every default should be good and Nuxt.js should h
 Once the build is finished and successful, you should be redirected to a success page. The URL of the hosted documentation should be available through the "**Visit**" button. You can customize it by changing the site name under the "**Settings**" tab of the new site dashboard.
 
 Congratulations! You documentation is now hosted and will update itself whenever you commit to your repository.
-
-## ☑️ &nbsp;Submission Checklist
-
-To keep track of your progress and to be sure not to miss anything here's a simple checklist you can use. Once everything ticks you should be ready to submit your library to us by tagging [@prismicio](https://twitter.com/prismicio) with #SliceContest on Twitter.
-
-- [ ] My library contains at least **5 different slices**
-- [ ] I have updated the [LICENSE](./LICENSE) to credit myself for my library
-- [ ] The Storybook documentation is hosted here: <!-- https://example.com -->
-- [ ] My library does not contain any non-public licensed assets
-
-> ☝️ For comprehensive rules refer to the contest [blog post](https://prismic.io/blog/slice-contest?utm_campaign=devexp&utm_source=github&utm_medium=slicecontestpost).

@@ -6,11 +6,17 @@
     "version": "sktwi1xtmkfgx8626",
     "description": "LandingPage",
     "primary": {
-      "title": [{ "type": "heading1", "text": "PrismUI", "spans": [] }],
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Welcome to PrismUI Playground",
+          "spans": []
+        }
+      ],
       "description": [
         {
           "type": "paragraph",
-          "text": "Welcome to UI Slice Library for E-Commerce, built ontop of StorefrontUI, TailwindCSS and Slice Machine from Prismic. Developed by Maya Shavin",
+          "text": "This is the UI Slice Library for E-Commerce, built ontop of StorefrontUI, TailwindCSS and Slice Machine from Prismic. Developed by Maya Shavin",
           "spans": []
         }
       ],

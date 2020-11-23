@@ -36,7 +36,7 @@ const theme = create({
   brandTitle: "PrismStore Components",
   // brandUrl: 'https://prismic',
   brandImage:
-    "https://res.cloudinary.com/mayashavin/image/upload/v1606168965/prismUi/logo_transparent_background.png"
+    "https://res.cloudinary.com/mayashavin/image/upload/v1606158086/prismUi/white_logo_color_background.jpg"
 });
 
 addons.setConfig({

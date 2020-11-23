@@ -2,7 +2,7 @@ import Slice from "./";
 import model from "./model";
 import mocks from "./mocks.json";
 import SliceZone from "vue-slicezone";
-import { withKnobs, text, date, number } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 
 export default {
   title: model.name,
@@ -18,7 +18,7 @@ export default {
 };
 
 // TODO: Update to loop over mocks.json
-export const DefaultSlice = () => ({
+export const Basic = () => ({
   components: {
     Slice,
     SliceZone
@@ -68,5 +68,3 @@ export const DefaultSlice = () => ({
   },
   template: '<slice-zone :slices="[ mock ]" :resolver="resolver" />'
 });
-
-DefaultSlice.storyName = mocks[0].name;
