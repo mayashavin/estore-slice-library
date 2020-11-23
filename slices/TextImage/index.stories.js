@@ -2,6 +2,7 @@ import Slice from "./";
 import model from "./model";
 import mocks from "./mocks.json";
 import SliceZone from "vue-slicezone";
+import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 
 export default {
   title: `Product/${model.name}`,
@@ -34,7 +35,3 @@ export const DefaultSlice = () => ({
   },
   template: '<slice-zone :slices="[ mock ]" :resolver="resolver" />'
 });
-
-DefaultSlice.parameters = {
-  background
-};
