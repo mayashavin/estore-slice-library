@@ -19,13 +19,27 @@
             "placeholder": "This is where it all begins..."
           }
         },
-        "email": {
-          "type": "Text",
+        "placeholder": {
           "config": {
-            "label": "",
-            "id": "email",
-            "placeholder": ""
-          }
+            "label": "Placeholder",
+            "placeholder": "Enter your email at your own risk"
+          },
+          "type": "Text"
+        },
+        "subscribe": {
+          "config": {
+            "label": "Subscribe Button",
+            "placeholder": "Subscribe to me!"
+          },
+          "type": "Text"
+        },
+        "action": {
+          "config": {
+            "label": "Form action",
+            "placeholder": "",
+            "allowTargetBlank": true
+          },
+          "type": "Link"
         }
       },
       "items": {}
