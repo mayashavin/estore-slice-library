@@ -135,7 +135,6 @@ const Template = (args, { argTypes }) => ({
         :isClickable="isClickable" 
         :icon="icon" 
         :size="size"
-        :class="customClass"
         :styles="{ border, textColor, background, roundCorners, invertedIcon }"
         @tag-clicked="tagClicked" />
     </div>
