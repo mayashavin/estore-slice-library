@@ -11,13 +11,6 @@ export default {
     }
   },
   argTypes: {
-    starColor: {
-      control: 'color',
-      description: 'Color of the review star icon.',
-      table: {
-        category: 'Review Icon'
-      }
-    },
     max: {
       control: {
         type: 'number'

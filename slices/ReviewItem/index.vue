@@ -5,7 +5,6 @@
         :max="max" 
         :score="review.score"
         :icon="starIcon"
-        :color="starColor"
         class="mb-3"
       />
       <div class="review-item--reviewer flex items-center w-48 order-first md:order-last">
@@ -47,9 +46,6 @@ export default {
       type: Number,
       default: 5,
     },
-    starColor: {
-      type: String,
-    }
   },
   data() {
     return {

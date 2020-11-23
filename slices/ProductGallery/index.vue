@@ -1,5 +1,5 @@
 <template>
-  <div class="flex section" :class="containerClass">
+  <div class="flex" :class="containerClass">
     <div class="border-white overflow-hidden" :class="mainImageBorderClass">
       <img 
         :src="selectedImage.url" 
