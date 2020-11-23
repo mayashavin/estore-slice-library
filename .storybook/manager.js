@@ -1,9 +1,9 @@
-import { addons } from '@storybook/addons';
-import { create } from '@storybook/theming/create';
+import { addons } from "@storybook/addons";
+import { create } from "@storybook/theming/create";
 
 const theme = create({
   // ...themes.dark,
-  base: 'dark',
+  base: "dark",
 
   // colorPrimary: 'hotpink',
   // colorSecondary: 'deepskyblue',
@@ -33,9 +33,10 @@ const theme = create({
   // inputTextColor: 'black',
   // inputBorderRadius: 4,
 
-  brandTitle: 'PrismStore Components',
+  brandTitle: "PrismStore Components",
   // brandUrl: 'https://prismic',
-  brandImage: 'https://res.cloudinary.com/mayashavin/image/upload/v1601967336/coding_angels/white_logo_transparent_background.png',
+  brandImage:
+    "https://res.cloudinary.com/mayashavin/image/upload/v1606168965/prismUi/logo_transparent_background.png"
 });
 
 addons.setConfig({
