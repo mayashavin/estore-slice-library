@@ -1,116 +1,296 @@
-import { withKnobs, text, color, select, number } from "@storybook/addon-knobs";
-import CImage from './'
-import { RGBAToHexA, CROPMODE, GRAVITY, PLACEHOLDER_TRANSFORMATIONS } from "./helpers";
+import { STORAGE_TYPES } from "cloudinary-build-url";
+import CImage from "./";
+import {
+  RGBAToHexA,
+  CROPMODE,
+  GRAVITY,
+  PLACEHOLDER_TRANSFORMATIONS
+} from "./helpers";
 
 export default {
-  title: 'Components/CImage',
-  decorators: [withKnobs],
-  parameters: {
-    escapeHTML: false,
-  },
+  title: "Components/CImage",
   argTypes: {
-    src: { 
-      control: 'text',
-      name: 'src',
-      description: 'Public Id or Image URL',
-      
+    src: {
+      control: "text",
+      name: "src",
+      description: "Public Id or Image URL",
       type: {
-        required: true,
+        required: true
       },
       table: {
-        category: 'Image'
-      }
+        category: "Image"
+      },
+      defaultValue: "kitten"
     },
-    cloud: {
-      control: 'object',
-      name: 'cloud',
-      description: 'Cloudinary configuration options',
+    cloudName: {
+      type: "string",
+      control: {
+        type: "text"
+      },
+      name: "cloud.cloudName",
+      description: "Cloudinary cloud name - Required if not set globally",
       table: {
-        category: 'Configuration'
-      }
+        category: "Cloud Configuration"
+      },
+      defaultValue: "demo"
+    },
+    storageType: {
+      name: "cloud.storageType",
+      description: "How the image was stored in Cloudinary",
+      control: {
+        type: "select",
+        options: Object.values(STORAGE_TYPES)
+      },
+      table: {
+        category: "Cloud Configuration",
+        defaultValue: {
+          summary: "upload"
+        }
+      },
+      defaultValue: "upload"
     },
     placeholder: {
       control: {
-        type: 'select',
-        options: Object.keys(PLACEHOLDER_TRANSFORMATIONS),
+        type: "select",
+        options: Object.keys(PLACEHOLDER_TRANSFORMATIONS)
       },
-      description: 'Placeholder type for image',
-      name: 'placeholder',
+      description: "Placeholder type for image",
+      name: "placeholder",
       table: {
-        category: 'Image',
+        category: "Image",
         defaultValue: {
-          summary: 'blur'
+          summary: "blur"
         }
+      },
+      defaultValue: "blur"
+    },
+    width: {
+      type: "string",
+      control: {
+        type: "text"
+      },
+      name: "transformations.resize.width",
+      description: "Width to resize the image to",
+      table: {
+        category: "Transformations/Resize"
+      },
+      defaultValue: "500"
+    },
+    height: {
+      type: "string",
+      control: {
+        type: "text"
+      },
+      name: "transformations.resize.height",
+      description: "Height to resize the image to",
+      table: {
+        category: "Transformations/Resize"
+      },
+      defaultValue: "500"
+    },
+    type: {
+      name: "transformations.resize.type",
+      description: "Crop mode",
+      control: {
+        type: "select",
+        options: CROPMODE
+      },
+      table: {
+        category: "Transformations/Resize",
+        defaultValue: {
+          summary: "thumb"
+        }
+      },
+      defaultValue: "thumb"
+    },
+    aspectRatio: {
+      name: "transformations.resize.aspectRatio",
+      description: "Aspect ratio of the resizing",
+      control: {
+        type: "text"
+      },
+      table: {
+        category: "Transformations/Resize",
+        defaultValue: {
+          summary: "1"
+        }
+      },
+      defaultValue: "1"
+    },
+    gravity: {
+      name: "transformations.gravity",
+      description: "Focus position to resize around",
+      control: {
+        type: "select",
+        options: GRAVITY
+      },
+      table: {
+        category: "Transformations/Resize",
+        defaultValue: {
+          summary: "thumb"
+        }
+      },
+      defaultValue: "center"
+    },
+    radius: {
+      name: "transformations.radius",
+      description:
+        "Number of pixels or a mode for making the corner of the image rounded.",
+      control: {
+        type: "text"
+      },
+      table: {
+        category: "Transformations"
       }
     },
-    
+    rotate: {
+      name: "transformations.rotate",
+      type: "number",
+      description: "How much degree to rotate the image.",
+      control: {
+        type: "range",
+        min: -180,
+        max: 180,
+        step: 10
+      },
+      table: {
+        category: "Transformations",
+        defaultValue: {
+          summary: 0
+        }
+      },
+      defaultValue: 0
+    },
+    effect: {
+      name: "transformations.effect",
+      description: "Effect to apply on the image",
+      control: {
+        type: "text"
+      },
+      table: {
+        category: "Transformations"
+      }
+    },
+    dpr: {
+      name: "transformations.dpr",
+      description: "Target device pixel ratio",
+      control: {
+        type: "text"
+      },
+      table: {
+        category: "Transformations"
+      }
+    },
+    borderWidth: {
+      name: "transformations.border.width",
+      description: "Width of border to apply to image",
+      type: {
+        required: true
+      },
+      table: {
+        category: "Transformations"
+      },
+      control: {
+        type: "number"
+      }
+    },
+    borderColor: {
+      type: "string",
+      name: "transformations.border.color",
+      description: "Color of border to apply to image",
+      table: {
+        category: "Transformations",
+        defaultColor: {
+          summary: "black"
+        }
+      },
+      control: {
+        type: "color"
+      },
+      defaultValue: "black"
+    },
+    format: {
+      name: "transformations.format",
+      description: "Target format to serve on delivery",
+      control: {
+        type: "text"
+      },
+      table: {
+        category: "Transformations",
+        defaultValue: "auto"
+      },
+      defaultValue: "auto"
+    },
+    opacity: {
+      control: {
+        type: "range",
+        min: 0,
+        max: 100,
+        step: 10
+      },
+      table: {
+        category: "Transformations",
+        defaultValue: 100
+      },
+      name: "transformations.opacity",
+      description: "Opacity of the image",
+      defaultValue: 100
+    }
   }
-}
+};
 
-export const Basic = () => ({
+export const Basic = (args, { argTypes }) => ({
   components: { CImage },
-  props: {
-    src: {
-      default: text('Image path','kitten', 'Image source')
-    },
-    cloud: {
-      default: (() => ({
-        cloudName: text('Cloud name', 'demo', 'Cloudinary'),
-        storageType: 'upload'
-      }))()
-    },
-    transformations: {
-      default: () => ({
+  props: Object.keys(argTypes),
+  computed: {
+    transformations() {
+      const {
+        opacity,
+        format,
+        dpr,
+        effect,
+        rotate,
+        gravity,
+        radius,
+        width,
+        height,
+        type,
+        borderWidth,
+        borderColor,
+        aspectRatio
+      } = this;
+      return {
+        opacity,
+        format,
+        dpr,
+        effect,
+        rotate,
+        gravity,
+        radius,
         resize: {
-          width: number('Width', 500, {}, 'Resize'),
-          height: number('Height', 500, {}, 'Resize'),
-          type: select('Resize type', CROPMODE, 'thumb', 'Resize'),
-          aspectRatio: text('Aspect ratio', '1', 'Resize')
+          width,
+          height,
+          type,
+          aspectRatio
         },
-        gravity: select('Gravity', GRAVITY, 'center', 'Resize'),
-        radius: text('Round corner', '', 'Other transformations'),
-        rotate: number('Rotate', 0, {
-          range: true,
-          min: -180,
-          max: 180,
-          step: 10
-        }, 'Other transformations'),
-        effect: text('Effect', '', 'Other transformations'),
-        dpr: number('DPR', 1, {
-          step: 0.1
-        }, 'Other transformations'),
-        zoom: number('Zoom', 1, {
-          step: 0.1,
-          range: true,
-          min: 0,
-          max: 1
-        }, "Other transformations"),
         border: {
-          width: number('Border width', 0, {
-            min: 0
-          }, 'Border'),
-          type: 'solid',
-          color: (() => {
-            const selectedColor = color('Color', 'black', 'Border')
+          width: borderWidth,
+          color: borderColor.startsWith("rgba(")
+            ? RGBAToHexA(borderColor)
+            : borderColor
+        }
+      };
+    },
+    cloud() {
+      const cloud = {
+        storageType: this.storageType
+      };
 
-            if (selectedColor.startsWith('rgba(')) {
-              const rgba = RGBAToHexA(selectedColor)
-              return rgba
-            }
+      if (this.cloudName) cloud.cloudName = this.cloudName;
 
-            return selectedColor
-          })()
-        },
-        format: text('Format', 'auto', 'Other transformations'),
-        opacity:number('Opacity', 100, {
-          range: true,
-          min: 0,
-          max: 100,
-          step: 10
-        }, 'Other transformations')
-      }),
-      placeholder: select('Placeholder', Object.keys(PLACEHOLDER_TRANSFORMATIONS), 'blur', 'Placeholder')
+      return cloud;
     }
   },
-  template: '<c-image :src="src" :cloud="cloud" :transformations="transformations" />',
-})
+  template:
+    '<c-image :src="src" :cloud="cloud" :transformations="transformations" :placeholder="placeholder" />'
+});
