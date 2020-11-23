@@ -28,11 +28,6 @@ export default {
       default: 'left',
       validator: value => HORIZONTAL_POSITION.includes(value)
     },
-    imagePlaceholder: {
-      type: String,
-      default: 'blur',
-      validator: value => !!PLACEHOLDER_TRANSFORMATIONS[value]
-    },
     imageModifier: {
       type: Object,
       default: () => ({})
@@ -41,7 +36,7 @@ export default {
   computed: {
     imageClass() {
       return {
-        'order-first': this.imagePos === 'left' 
+        'order-first': this.slice.primary.imagePos === 'left' 
       }
     }  ,
     transformations() {
